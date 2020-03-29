@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 28
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.core:core-ktx:1.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // AndroidUtilCode
+    api 'com.blankj:utilcodex:1.26.0'
+    //添加Retrofit网络库和gsonConverter的依赖，注意一定要2.6.0版本以上
+    api 'com.squareup.retrofit2:retrofit:2.7.0'
+    api 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+    api 'com.squareup.retrofit2:converter-gson:2.7.0'
+    //添加Jetpack中架构组件的依赖，注意viewmodel要添加viewmodel-ktx的依赖
+    api "androidx.lifecycle:lifecycle-livedata:2.2.0"
+    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    api "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+}

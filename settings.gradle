@@ -1,0 +1,3 @@
+rootProject.name='CoroutinesSample'
+include ':app'
+include ':commonmodule'
