@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <string name="exit">退出</string>
+    <string name="open">打开</string>
+    <string name="save">保存</string>
+    <string name="more">更多</string>
+    <string name="retry">重试</string>
+    <string name="alert">提示</string>
+    <string name="apply">应用</string>
+    <string name="cancel">取消</string>
+    <string name="search">搜索</string>
+    <string name="finish">完成</string>
+    <string name="confirm">确定</string>
+    <string name="unknown">未知</string>
+    <string name="seeAll">查看全部</string>
+    <string name="exitSure">确定要退出吗？</string>
+    <string name="pleaseWaiting">请稍候…</string>
+    <string name="gettingInfo">正在获取信息</string>
+    <string name="getInfoFailed">获取信息失败</string>
+    <string name="fileDoesNotExist">文件不存在</string>
+    <string name="uploadFileFailed">上传文件失败</string>
+    <string name="poweredBy">Powered By TepuSoft</string>
+    <string name="saySomething">说点什么…</string>
+    <string name="loadMore_loadFailed">加载失败了</string>
+    <string name="loadMore_noMoreData">暂时没有更多啦~</string>
+
+    <string name="goSignIn">去登录</string>
+    <string name="reSignIn">重新登录</string>
+    <string name="goSetting">去设置</string>
+    <string name="noNetwork">没有网络</string>
+    <string name="notSigned">尚未登录</string>
+    <string name="tokenOvertime">登录过期</string>
+    <string name="noNetwork_content">你进入了一个没有网络的异次元。</string>
+    <string name="notSigned_content">您还尚未登录，暂时不能使用此功能。</string>
+    <string name="tokenOvertime_content">您当前的登录会话已过期，请重新登录。</string>
+
+    <string name="errorStr_parse">解析失败</string>
+    <string name="errorStr_cipher">密文操作失败</string>
+    <string name="errorStr_timeOut">连接超时啦</string>
+    <string name="errorStr_unknown">发生了一点错误</string>
+    <string name="errorStr_getInfo">获取信息失败了</string>
+    <string name="errorStr_noNetwork">没有网络</string>
+    <string name="errorStr_notSigned">尚未登录</string>
+    <string name="errorStr_createParam">生成参数错误</string>
+    <string name="errorStr_cannotConnect">服务器君不见了</string>
+    <string name="errorStr_remoteOperate">服务器君操作失败</string>
+    <string name="errorStr_tokenOverTime">当前登录会话已过期</string>
+    <string name="errorStr_requestRefused">服务器君拒绝了我们的请求</string>
+    <string name="errorStr_connectInterruption">服务连接中断</string>
+
+    <string name="xf_tb_defaultTitle">TITLE</string>
+    <string name="xf_tb_defaultOperation">OPERATION</string>
+
+    <string name="xf_sl_error">加载失败了呢\n轻触重试</string>
+    <string name="xf_sl_empty">暂时没有数据呢\n刷新重试</string>
+    <string name="xf_sl_notSigned">您尚未登录\n点击前往</string>
+    <string name="xf_sl_noNetwork">身处没有网络的异次元\n轻触重试</string>
+    <string name="xf_sl_tokenOverTime">您的登录凭证已过期\n轻触重新登录</string>
+</resources>

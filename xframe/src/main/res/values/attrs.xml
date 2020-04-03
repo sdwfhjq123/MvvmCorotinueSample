@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="XFToolbar">
+        <!--可见性-->
+        <attr name="xf_tb_backVisible" format="boolean" />
+        <attr name="xf_tb_titleVisible" format="boolean" />
+        <attr name="xf_tb_operateVisible" format="boolean" />
+        <attr name="xf_tb_txtOperateVisible" format="boolean" />
+        <!--按钮src-->
+        <attr name="xf_tb_backSrc" format="reference" />
+        <attr name="xf_tb_operateSrc" format="reference" />
+        <!--文字内容-->
+        <attr name="xf_tb_titleText" format="string" />
+        <attr name="xf_tb_txtOperateText" format="string" />
+        <attr name="xf_tb_titleTextColor" format="color" />
+        <attr name="xf_tb_txtOperateTextColor" format="color" />
+        <attr name="xf_tb_titleTextSize" format="dimension" />
+        <attr name="xf_tb_txtOperateTextSize" format="dimension" />
+        <!--顶部padding-->
+        <attr name="xf_tb_rootPaddingTop" format="dimension" />
+        <!--背景色-->
+        <attr name="xf_tb_rootBackground" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="StateLayout" tools:ignore="ResourceName">
+
+        <attr name="xf_sl_showAnim" format="reference" />
+        <attr name="xf_sl_hideAnim" format="reference" />
+        <attr name="xf_sl_useChangeAnim" format="boolean"/>
+
+        <attr name="xf_sl_errorText" format="string" />
+        <attr name="xf_sl_emptyText" format="string" />
+        <attr name="xf_sl_noNetworkText" format="string" />
+        <attr name="xf_sl_notSignedText" format="string" />
+        <attr name="xf_sl_tokenOverTimeText" format="string" />
+
+        <attr name="xf_sl_errorImage" format="reference" />
+        <attr name="xf_sl_emptyImage" format="reference" />
+        <attr name="xf_sl_noNetworkImage" format="reference" />
+        <attr name="xf_sl_notSignedImage" format="reference" />
+        <attr name="xf_sl_tokenOverTimeImage" format="reference" />
+
+        <attr name="xf_sl_customizeLayout" format="reference"/>
+
+        <attr name="xf_sl_defaultShow" format="enum">
+            <enum name="content" value="0"/>
+            <enum name="error" value="1"/>
+            <enum name="empty" value="2"/>
+            <enum name="loading" value="3"/>
+            <enum name="customize" value="4"/>
+            <enum name="noNetwork" value="5"/>
+            <enum name="notSigned" value="6"/>
+            <enum name="tokenOverTime" value="7"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="AspectRatioImageView" tools:ignore="ResourceName">
+        <attr format="enum" name="ari_aspect">
+            <enum name="width" value="0"/>
+            <enum name="height" value="1"/>
+            <enum name="auto" value="2"/>
+        </attr>
+        <attr format="float" name="ari_ratio"/>
+    </declare-styleable>
+</resources>

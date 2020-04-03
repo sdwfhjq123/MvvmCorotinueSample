@@ -1,43 +1,58 @@
 package com.yinhao.coroutinessample.data.network
 
-import com.yinhao.coroutinessample.common.ConstantValue
-import okhttp3.Interceptor
+import com.yinhao.commonmodule.base.ex.loggerInterceptor
+import com.yinhao.coroutinessample.others.ConstantValues
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object ServiceCreator {
-
-    private const val BASE_URL = ConstantValue.BASE_URL
+class ServiceCreator {
 
     private val httpClient = OkHttpClient.Builder()
-        .addInterceptor(loggerInterceptor())
-        .callTimeout(5, TimeUnit.SECONDS)
+        .apply {
+           addInterceptor(loggerInterceptor())
+            readTimeout(10L, TimeUnit.SECONDS)
+            writeTimeout(10L, TimeUnit.SECONDS)
+            connectTimeout(10L, TimeUnit.SECONDS)
+            callTimeout(5, TimeUnit.SECONDS)
+        }
         .build()
 
     private val builder = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .client(httpClient)
-        .addConverterFactory(GsonConverterFactory.create())
 
-    private val retrofit = builder.build()
+    fun <T> create(
+        serviceClass: Class<T>,
+        retrofitConfig: ((Retrofit.Builder) -> Unit)? = null
+    ): T {
+        return builder.apply {
+            addConverterFactory(GsonConverterFactory.create())
+            //这里获取到token可以全局写一下
+//            headerInterceptor()
+            retrofitConfig
+        }.build().create(serviceClass)
+    }
 
-    fun <T> create(serviceClass: Class<T>): T = retrofit.create(serviceClass)
+    companion object {
 
-    /**
-     * ### 添加头信息参数。
-     * 接收多键值对[params]，first为name,second.m
-     */
+        private const val BASE_URL = ConstantValues.BASE_URL
 
-    /**
-     * ### 日志
-     */
-    private fun loggerInterceptor(): Interceptor {
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        return httpLoggingInterceptor
+        private var network: ServiceCreator? = null
+
+        fun getInstance(): ServiceCreator {
+            if (network == null) {
+                synchronized(ServiceCreator::class.java) {
+                    if (network == null) {
+                        network =
+                            ServiceCreator()
+                    }
+                }
+            }
+            return network!!
+        }
+
     }
 
 }
