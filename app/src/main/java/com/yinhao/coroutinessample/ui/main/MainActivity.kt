@@ -3,6 +3,7 @@ package com.yinhao.coroutinessample.ui.main
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
+import com.blankj.utilcode.util.SPUtils
 import com.yinhao.commonmodule.base.arch.base.BaseFragmentActivity
 import com.yinhao.coroutinessample.databinding.ActivityMainBinding
 import com.yinhao.coroutinessample.ui.MainViewModel

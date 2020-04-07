@@ -2,7 +2,9 @@ package com.yinhao.coroutinessample
 
 import android.app.Application
 import android.content.Context
+import android.content.Intent
 import androidx.annotation.NonNull
+import androidx.core.content.edit
 import androidx.multidex.MultiDex
 import com.blankj.utilcode.util.SPUtils
 import com.blankj.utilcode.util.Utils
@@ -56,9 +58,10 @@ class App : Application() {
         if ("not_sign" != userInfo.id) isUserSigned = true
         currentUser = userInfo
         userInfo.recordTime = System.currentTimeMillis()
-        SPUtils.getInstance(ConstantValues.PREF_USER_RECORD).clear()
-        SPUtils.getInstance(ConstantValues.PREF_USER_RECORD)
-            .put("user", RepositoryComponent.gson.toJson(currentUser))
+        getSharedPreferences(ConstantValues.PREF_USER_RECORD, Context.MODE_PRIVATE).edit(true) {
+            clear()
+            putString("user", RepositoryComponent.gson.toJson(currentUser))
+        }
     }
 
     /**
@@ -67,7 +70,7 @@ class App : Application() {
     fun signOut() {
         isUserSigned = false
         currentUser = CommonMethod.createNotSignedUserInfo()
-        SPUtils.getInstance("XFRAME2_USER_RECORD").clear()
+        SPUtils.getInstance(ConstantValues.PREF_USER_RECORD).clear()
     }
 
     override fun onCreate() {
