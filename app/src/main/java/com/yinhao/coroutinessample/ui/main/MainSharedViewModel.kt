@@ -1,4 +1,4 @@
-package com.yinhao.coroutinessample.ui
+package com.yinhao.coroutinessample.ui.main
 
 import com.yinhao.commonmodule.base.base.BaseViewModel
 
@@ -8,5 +8,6 @@ import com.yinhao.commonmodule.base.base.BaseViewModel
  * version: v1.0
  * ### description:
  */
+class MainSharedViewModel:BaseViewModel(){
 
-class MainViewModel:BaseViewModel()
+}

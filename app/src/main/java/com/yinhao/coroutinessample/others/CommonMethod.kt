@@ -2,7 +2,7 @@ package com.yinhao.coroutinessample.others
 
 import android.content.Context
 import android.content.res.Configuration
-import com.yinhao.coroutinessample.data.model.UserInfo
+import com.yinhao.coroutinessample.logic.model.UserInfo
 
 
 /**

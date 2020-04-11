@@ -2,7 +2,6 @@ package com.yinhao.coroutinessample
 
 import android.app.Application
 import android.content.Context
-import android.content.Intent
 import androidx.annotation.NonNull
 import androidx.core.content.edit
 import androidx.multidex.MultiDex
@@ -12,8 +11,8 @@ import com.bumptech.glide.Glide
 import com.jeremyliao.liveeventbus.LiveEventBus
 import com.yinhao.coroutinessample.others.CommonMethod
 import com.yinhao.coroutinessample.others.ConstantValues
-import com.yinhao.coroutinessample.data.model.UserInfo
-import com.yinhao.coroutinessample.data.network.RepositoryComponent
+import com.yinhao.coroutinessample.logic.model.UserInfo
+import com.yinhao.coroutinessample.logic.network.RepositoryComponent
 
 /**
  * author:  yinhao

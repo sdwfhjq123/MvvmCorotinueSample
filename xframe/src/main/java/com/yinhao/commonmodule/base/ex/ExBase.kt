@@ -1,14 +1,14 @@
 package com.yinhao.commonmodule.base.ex
 
 import androidx.lifecycle.*
-import com.yinhao.commonmodule.base.arch.base.AppResources
+import com.yinhao.commonmodule.base.base.AppResources
 import com.yinhao.commonmodule.base.others.XFConstants
-import com.yinhao.commonmodule.base.arch.repository.livedata.LiveDataWrapper
-import com.yinhao.commonmodule.base.arch.repository.livedata.holder.StateHolder
-import com.yinhao.commonmodule.base.arch.repository.livedata.holder.WaitingHolder
+import com.yinhao.commonmodule.base.repository.livedata.LiveDataWrapper
+import com.yinhao.commonmodule.base.repository.livedata.holder.StateHolder
+import com.yinhao.commonmodule.base.repository.livedata.holder.WaitingHolder
 import com.yinhao.commonmodule.base.widget.state.SLState
 import com.yinhao.commonmodule.R
-import com.yinhao.commonmodule.base.arch.repository.livedata.RNLDataWrapper
+import com.yinhao.commonmodule.base.repository.livedata.RNLDataWrapper
 
 /**
  * ### State LiveData的post简写
