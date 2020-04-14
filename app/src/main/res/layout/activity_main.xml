@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="10dp"
-    android:orientation="vertical"
     tools:context=".ui.main.MainActivity">
 
-    <Button
-        android:id="@+id/button"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="refresh" />
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/windowBackground"
+        app:itemIconSize="@dimen/xf_px_50"
+        app:itemIconTint="@drawable/style_color_main_bottom_navigation"
+        app:itemTextColor="@drawable/style_color_main_bottom_navigation"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
-</LinearLayout>
+    <!--
+    将defaultNavHost属性设置为true，则该Fragment会自动处理系统返回键，
+    即，当用户按下手机的返回按钮时，系统能自动将当前的Fragment推出。
+     -->
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/home_navigation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

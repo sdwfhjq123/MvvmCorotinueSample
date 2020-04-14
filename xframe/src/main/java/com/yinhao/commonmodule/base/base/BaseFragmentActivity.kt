@@ -4,8 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MotionEvent
-import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.viewbinding.ViewBinding
 import com.afollestad.materialdialogs.MaterialDialog
@@ -18,7 +18,6 @@ import com.kaopiz.kprogresshud.KProgressHUD
 import com.yinhao.commonmodule.R
 import com.yinhao.commonmodule.base.repository.livedata.holder.WaitingHolder
 import com.yinhao.commonmodule.base.others.XFConstants
-import me.yokeyword.fragmentation.SupportActivity
 import team.fcma.xframe.others.XFrameCommonMethods
 
 /**
@@ -28,7 +27,7 @@ import team.fcma.xframe.others.XFrameCommonMethods
  * ### description: 基础FragmentActivity
  */
 abstract class BaseFragmentActivity<M : BaseViewModel, SM : BaseViewModel, B : ViewBinding>
-    : SupportActivity(), ViewBindingHolderInterface<B> by ViewBindingHolder<B>() {
+    : AppCompatActivity(), ViewBindingHolderInterface<B> by ViewBindingHolder<B>() {
 
     private var waitingView: KProgressHUD? = null
     private var noNetworkAlert: MaterialDialog? = null
@@ -159,13 +158,13 @@ abstract class BaseFragmentActivity<M : BaseViewModel, SM : BaseViewModel, B : V
      * ### 设置statusBar
      */
     private fun setupStatusBar() {
-        findViewById<View>(R.id.view_XFToolbar_compatTopPadding)?.let {
-            immersionBar {
-                statusBarView(it)
-                keyboardEnable(true)
-                navigationBarEnable(false)
-            }
-        }
+//        findViewById<View>(R.id.view_XFToolbar_compatTopPadding)?.let {
+//            immersionBar {
+//                statusBarView(it)
+//                keyboardEnable(true)
+//                navigationBarEnable(false)
+//            }
+//        }
     }
 
     /**

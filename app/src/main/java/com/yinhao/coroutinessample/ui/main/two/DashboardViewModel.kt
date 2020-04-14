@@ -8,5 +8,5 @@ import com.yinhao.commonmodule.base.base.BaseViewModel
  * version: v1.0
  * ### description:
  */
-class ThreeViewModel:BaseViewModel() {
+class DashboardViewModel:BaseViewModel() {
 }

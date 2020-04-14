@@ -18,6 +18,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity"
         tools:replace="android:allowBackup">
+        <activity
+            android:name=".ui.main.Main2Activity"
+            android:label="@string/title_activity_main2"></activity>
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

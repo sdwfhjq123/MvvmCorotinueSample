@@ -8,5 +8,5 @@ import com.yinhao.commonmodule.base.base.BaseViewModel
  * version: v1.0
  * ### description:
  */
-class OneViewModel:BaseViewModel() {
+class HomeViewModel:BaseViewModel() {
 }

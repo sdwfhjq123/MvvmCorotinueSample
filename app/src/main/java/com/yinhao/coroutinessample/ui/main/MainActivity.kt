@@ -2,18 +2,16 @@ package com.yinhao.coroutinessample.ui.main
 
 import android.view.LayoutInflater
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.yinhao.commonmodule.base.base.BaseFragmentActivity
+import com.yinhao.coroutinessample.R
 import com.yinhao.coroutinessample.databinding.ActivityMainBinding
 import com.yinhao.coroutinessample.ui.MainViewModel
-import com.yinhao.coroutinessample.ui.main.one.OneFragment
-import com.yinhao.coroutinessample.ui.main.one.ThreeFragment
-import com.yinhao.coroutinessample.ui.main.one.TwoFragment
-import me.yokeyword.fragmentation.SupportFragment
 
 class MainActivity : BaseFragmentActivity<MainViewModel, MainSharedViewModel, ActivityMainBinding>() {
 
-    private var currentTabPos = 0
-    private val fragments = arrayOfNulls<SupportFragment>(3)
 
     override fun initViewModel(): MainViewModel =
         ViewModelProvider(this).get(MainViewModel::class.java)
@@ -28,15 +26,19 @@ class MainActivity : BaseFragmentActivity<MainViewModel, MainSharedViewModel, Ac
     }
 
     override fun setupFragments() {
-        val firstFragment = findFragment(OneFragment::class.java)
-        if (firstFragment != null) {
-            fragments[0] = firstFragment
-            fragments[1] = findFragment(TwoFragment::class.java)
-            fragments[2] = findFragment(ThreeFragment::class.java)
-        } else {
-            fragments[0] = OneFragment.newInstance()
-            fragments[1] = TwoFragment.newInstance()
-            fragments[2] = ThreeFragment.newInstance()
+        val navController = findNavController(R.id.nav_host_fragment)
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
+//        setupActionBarWithNavController(navController, appBarConfiguration)
+        viewBinding?.navView?.let { bnv ->
+            bnv.setupWithNavController(navController)
+            bnv.setOnNavigationItemSelectedListener {
+                when(it.itemId){
+                    R.id.navigation_home->navController.navigate(R.id.homeFragment)
+                    R.id.navigation_dashboard->navController.navigate(R.id.dashboardFragment)
+                    R.id.navigation_notifications->navController.navigate(R.id.notificationsFragment)
+                }
+                true
+            }
         }
     }
 

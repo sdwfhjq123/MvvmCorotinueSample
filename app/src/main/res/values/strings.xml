@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CoroutinesSample</string>
+
+    <string name="mainTab_mine">我是1</string>
+    <string name="mainTab_train">我是2</string>
+    <string name="mainTab_index">我是3</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

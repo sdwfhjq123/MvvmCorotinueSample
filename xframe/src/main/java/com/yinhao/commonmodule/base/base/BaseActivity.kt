@@ -56,13 +56,10 @@ abstract class BaseActivity<M : BaseViewModel, B : ViewBinding>
      * ### 设置statusBar
      */
     private fun setupStatusBar() {
-        findViewById<View>(R.id.view_XFToolbar_compatTopPadding)?.let {
-            immersionBar {
-                keyboardEnable(true)
-                statusBarDarkFont(barDarkMode)
-            }
-        }
-    }
+        immersionBar {
+            keyboardEnable(true)
+            statusBarDarkFont(barDarkMode)
+        }}
 
     /**
      * ### 获取本页面对应的ViewModel

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yinhao.coroutinessample.ui.main.one.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.yinhao.coroutinessample.ui.main.two.DashboardFragment"
+        android:label="dashboard_fragment"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.yinhao.coroutinessample.ui.main.three.NotificationsFragment"
+        android:label="notifications_fragment"
+        tools:layout="@layout/fragment_notifications" />
+
+</navigation>

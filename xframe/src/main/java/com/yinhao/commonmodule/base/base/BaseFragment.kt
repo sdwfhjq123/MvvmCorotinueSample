@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewbinding.ViewBinding
 import com.gyf.immersionbar.ImmersionBar
 import com.gyf.immersionbar.ktx.immersionBar
 import com.yinhao.commonmodule.R
-import me.yokeyword.fragmentation.SupportFragment
 
 /**
  * author:      SHIGUANG
@@ -18,38 +18,28 @@ import me.yokeyword.fragmentation.SupportFragment
  * ### description: 基础Fragment
  */
 abstract class BaseFragment<M : BaseViewModel, SM : BaseViewModel, B : ViewBinding>
-    : SupportFragment(), ViewBindingHolderInterface<B> by ViewBindingHolder<B>() {
+    : Fragment(), ViewBindingHolderInterface<B> by ViewBindingHolder<B>() {
 
     open var barDarkMode = false
     protected val viewModel: M by lazy { initViewModel() }
     protected val sharedViewModel: SM by lazy { initSharedViewModel() }
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? =
-        viewBinding?.root ?: bindViewBinding(initViewBinging(inflater, container), this)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        viewBinding?.root ?: bindViewBinding(initViewBinding(inflater, container), this)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initWindowFlag()
-        view.findViewById<View>(R.id.view_XFToolbar_compatTopPadding)?.let {
-            ImmersionBar.setStatusBarView(this, it)
-        }
+//        view.findViewById<View>(R.id.view_XFToolbar_compatTopPadding)?.let {
+//            ImmersionBar.setStatusBarView(this, it)
+//        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initEvents()
-    }
-
-    override fun onSupportVisible() {
-        super.onSupportVisible()
         setupStatusBar()
-    }
-
-    override fun onLazyInitView(savedInstanceState: Bundle?) {
-        super.onLazyInitView(savedInstanceState)
         start()
     }
 
@@ -57,11 +47,9 @@ abstract class BaseFragment<M : BaseViewModel, SM : BaseViewModel, B : ViewBindi
      * ### 设置statusBar
      */
     private fun setupStatusBar() {
-        view?.findViewById<View>(R.id.view_XFToolbar_compatTopPadding)?.let {
-            immersionBar {
-                keyboardEnable(true)
-                statusBarDarkFont(barDarkMode)
-            }
+        immersionBar {
+            keyboardEnable(true)
+            statusBarDarkFont(barDarkMode)
         }
     }
 
@@ -86,7 +74,7 @@ abstract class BaseFragment<M : BaseViewModel, SM : BaseViewModel, B : ViewBindi
     /**
      * ### 获取本页面对应的ViewBinding
      */
-    abstract fun initViewBinging(inflater: LayoutInflater, container: ViewGroup?): B
+    abstract fun initViewBinding(inflater: LayoutInflater, container: ViewGroup?): B
 
     /**
      *  ### 设置本页面的WindowFlag

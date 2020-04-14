@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#4F7FFF</color>
+    <color name="colorPrimary">#4F7FFF</color>
+    <color name="colorPrimaryDark">#00559C</color>
+    <color name="colorSecond">#FBC644</color>
+    <color name="colorSecondDark">#F37E17</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#FFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="splitLineColor">#CCCCCC</color>
+    <color name="splitLineColor2">#F2F2F2</color>
+    <color name="tabColor_active">#00559C</color>
+    <color name="tabColor_inactive">#959595</color>
+
+    <color name="textColor_gray">#AAAAAA</color>
+    <color name="textColor_black">#333333</color>
+    <color name="textColor_white">#FFFFFF</color>
 </resources>
