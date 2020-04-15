@@ -6,9 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.yinhao.commonmodule.base.base.BaseFragment
 import com.yinhao.coroutinessample.databinding.FragmentNotificationsBinding
 import com.yinhao.coroutinessample.ui.main.MainSharedViewModel
-import com.yinhao.coroutinessample.ui.main.one.NotificationsViewModel
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 /**
  * author:  yinhao
